@@ -1,0 +1,49 @@
+INFO:     Started server process [3636]
+INFO:     Waiting for application startup.
+2026-03-17 06:08:00,443 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-03-17 06:08:00,443 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("anomaly")
+2026-03-17 06:08:00,443 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-03-17 06:08:00,444 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("user")
+2026-03-17 06:08:00,444 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-03-17 06:08:00,444 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("roomschedule")
+2026-03-17 06:08:00,444 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-03-17 06:08:00,444 INFO sqlalchemy.engine.Engine COMMIT
+2026-03-17 06:08:00,445 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-03-17 06:08:00,451 INFO sqlalchemy.engine.Engine SELECT user.id, user.name, user.eco_points
+FROM user
+2026-03-17 06:08:00,451 INFO sqlalchemy.engine.Engine [generated in 0.00023s] ()
+2026-03-17 06:08:00,452 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+GEMINI_API_KEY not found in environment.
+2026-03-17 07:49:39,421 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-03-17 07:49:39,492 INFO sqlalchemy.engine.Engine INSERT INTO anomaly (type, description, location, priority, ai_analysis, created_at) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-17 07:49:39,493 INFO sqlalchemy.engine.Engine [generated in 0.00820s] ('other', 'The window is broken', 'S1', 'Medium', 'AI analysis unavailable - please add GEMINI_API_KEY to backend/.env', '2026-03-17 07:49:39.327080')
+2026-03-17 07:49:39,562 INFO sqlalchemy.engine.Engine SELECT user.id, user.name, user.eco_points
+FROM user
+WHERE user.name = ?
+2026-03-17 07:49:39,563 INFO sqlalchemy.engine.Engine [generated in 0.00178s] ('Mohamed Chaari',)
+2026-03-17 07:49:39,596 INFO sqlalchemy.engine.Engine UPDATE user SET eco_points=? WHERE user.id = ?
+2026-03-17 07:49:39,597 INFO sqlalchemy.engine.Engine [generated in 0.00066s] (10, 3)
+2026-03-17 07:49:39,599 INFO sqlalchemy.engine.Engine COMMIT
+2026-03-17 07:49:39,621 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-03-17 07:49:39,640 INFO sqlalchemy.engine.Engine SELECT anomaly.id, anomaly.type, anomaly.description, anomaly.location, anomaly.priority, anomaly.ai_analysis, anomaly.created_at
+FROM anomaly
+WHERE anomaly.id = ?
+2026-03-17 07:49:39,640 INFO sqlalchemy.engine.Engine [generated in 0.00118s] (1,)
+2026-03-17 07:49:39,658 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:37354 - "POST /api/report/ HTTP/1.1" 200 OK
+2026-03-17 07:49:53,130 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-03-17 07:49:53,133 INFO sqlalchemy.engine.Engine SELECT roomschedule.id, roomschedule.room_name, roomschedule.capacity, roomschedule.status
+FROM roomschedule
+WHERE roomschedule.status = ?
+2026-03-17 07:49:53,133 INFO sqlalchemy.engine.Engine [generated in 0.00027s] ('Empty',)
+2026-03-17 07:49:53,136 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:50590 - "POST /api/relocation/ HTTP/1.1" 404 Not Found
+2026-03-17 07:50:05,388 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-03-17 07:50:05,388 INFO sqlalchemy.engine.Engine SELECT roomschedule.id, roomschedule.room_name, roomschedule.capacity, roomschedule.status
+FROM roomschedule
+WHERE roomschedule.status = ?
+2026-03-17 07:50:05,388 INFO sqlalchemy.engine.Engine [cached since 12.26s ago] ('Empty',)
+2026-03-17 07:50:05,390 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:39832 - "POST /api/relocation/ HTTP/1.1" 404 Not Found
