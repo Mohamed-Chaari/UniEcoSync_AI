@@ -1,0 +1,6 @@
+/app/spring-backend/src/main/java/com/isims/uniecosync/dto/IssueResponse.java
+/app/spring-backend/src/main/java/com/isims/uniecosync/service/ReportService.java
+/app/spring-backend/src/main/java/com/isims/uniecosync/repository/EcoIssueRepository.java
+/app/spring-backend/src/main/java/com/isims/uniecosync/UniecosyncApplication.java
+/app/spring-backend/src/main/java/com/isims/uniecosync/model/EcoIssue.java
+/app/spring-backend/src/main/java/com/isims/uniecosync/controller/ReportController.java
