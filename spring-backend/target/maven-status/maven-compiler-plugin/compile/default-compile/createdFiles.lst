@@ -1,0 +1,6 @@
+com/isims/uniecosync/repository/EcoIssueRepository.class
+com/isims/uniecosync/model/EcoIssue.class
+com/isims/uniecosync/dto/IssueResponse.class
+com/isims/uniecosync/UniecosyncApplication.class
+com/isims/uniecosync/service/ReportService.class
+com/isims/uniecosync/controller/ReportController.class
